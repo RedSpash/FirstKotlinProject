@@ -9,7 +9,7 @@ private const val VERTICAL_LINE = "┃"
 
 private const val HORIZONTAL_LINE = "━━━"
 
-class MoonMap(private val sizeX: Int, private val sizeY: Int) {
+class MoonMap(val sizeX: Int, val sizeY: Int) {
 
     private var map : Array<Array<Object>> = arrayOf()
 
@@ -17,7 +17,7 @@ class MoonMap(private val sizeX: Int, private val sizeY: Int) {
         for (y in 1..sizeY){
             var line : Array<Object> = arrayOf()
             for (x in 1..sizeX){
-                if((0..3).random() <= 2){
+                if((0..3).random() == 1 || (x == 1 && y == 1)){
                     line += Void()
                 }else{
                     line += Obstacle()

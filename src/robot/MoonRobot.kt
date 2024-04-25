@@ -2,6 +2,7 @@ package robot
 
 import map.MoonMap
 import map.Position
+import `object`.Marker
 import `object`.Object
 import robot.direction.Direction
 
@@ -15,6 +16,7 @@ class MoonRobot(val map: MoonMap) {
         if(mapObject != null && !mapObject.isSolid()){
             this.position.x += x
             this.position.y += y
+            this.map.setElement(this.position, Marker())
         }
     }
 }
