@@ -1,8 +1,8 @@
 package `object`
 
-class Void : Object {
+class Obstacle : Object {
     override fun isSolid(): Boolean {
-        return false
+        return true
     }
 
     override fun isCollectable(): Boolean {
@@ -10,6 +10,10 @@ class Void : Object {
     }
 
     override fun isBreakable(): Boolean {
-        return false
+        return true
+    }
+
+    override fun symbolRepresentation(): String {
+        return "X"
     }
 }

@@ -1,4 +1,8 @@
 package `object`
 
-class Object {
+interface Object {
+    fun isSolid(): Boolean
+    fun isCollectable(): Boolean
+    fun isBreakable(): Boolean
+    fun symbolRepresentation(): String
 }
