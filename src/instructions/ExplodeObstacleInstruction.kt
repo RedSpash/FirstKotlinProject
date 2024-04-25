@@ -1,11 +1,19 @@
 package instructions
 
+import map.Position
+import `object`.Void
 import robot.MoonRobot
 import robot.direction.Direction
 
-class MoveUpInstruction : Instruction{
+class ExplodeObstacleInstruction : Instruction{
     override fun execute(robot: MoonRobot) {
-        robot.move(0,-1)
-        robot.direction = Direction.UP
+        val obstaclePosition = Position(
+            robot.position.x + robot.direction.x,
+            robot.position.y + robot.direction.y
+        )
+        val obstacle = robot.map.getElementAt(obstaclePosition)
+        if(obstacle != null && obstacle.isBreakable()){
+            robot.map.setElement(obstaclePosition, Void())
+        }
     }
 }
