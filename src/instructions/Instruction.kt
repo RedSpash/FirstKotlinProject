@@ -1,0 +1,4 @@
+package instructions
+
+interface Instruction {
+}
